@@ -69,7 +69,7 @@ no_button.addEventListener('click', () => {
    
     let banner = document.getElementById('banner');
     if (clicks === 0) {
-        banner.src = "my-valentine/no.gif";
+        banner.src = "./no.gif";
         refreshBanner();
     }
     clicks++;
@@ -98,7 +98,7 @@ no_button.addEventListener('click', () => {
 yes_button.addEventListener('click', () => {
   
     let banner = document.getElementById('banner');
-    banner.src = "my-valentine/yes.gif";
+    banner.src = "./yes.gif";
     refreshBanner();
  
     let buttons = document.getElementsByClassName('buttons')[0];
@@ -144,7 +144,7 @@ function changeLanguage() {
    
     const successMessage = document.getElementById("success-message");
     if (language === "french") {
-        successMessage.textContent = "Yepppie, à bientôt Cass :3";
+        successMessage.textContent = "Yepppie, à bientôt my Cass :3";
     } else if (language === "thai") {
         successMessage.textContent = "ฮูเร่ คืนดีกันแล้วน้า :3";
     } else {
