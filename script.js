@@ -69,7 +69,7 @@ no_button.addEventListener('click', () => {
    
     let banner = document.getElementById('banner');
     if (clicks === 0) {
-        banner.src = "./no.gif";
+        banner.src = "/no.gif";
         refreshBanner();
     }
     clicks++;
@@ -98,7 +98,7 @@ no_button.addEventListener('click', () => {
 yes_button.addEventListener('click', () => {
   
     let banner = document.getElementById('banner');
-    banner.src = "./yes.gif";
+    banner.src = "/yes.gif";
     refreshBanner();
  
     let buttons = document.getElementsByClassName('buttons')[0];
