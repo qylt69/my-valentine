@@ -58,7 +58,7 @@ answers_yes = {
     "Thailand": "เย่ คืนดีกันแล้วน้า"
 }
 
-let language = "english"; // Default language is English
+let language = "english"; 
 const no_button = document.getElementById('no-button');
 const yes_button = document.getElementById('yes-button');
 let i = 1;
@@ -66,21 +66,21 @@ let size = 50;
 let clicks = 0;
 
 no_button.addEventListener('click', () => {
-    // Change banner source
+   
     let banner = document.getElementById('banner');
     if (clicks === 0) {
-        banner.src = "./images/no.gif";
+        banner.src = "./my-valentine/no.gif";
         refreshBanner();
     }
     clicks++;
-    // increase button height and width gradually to 250px
+
     const sizes = [40, 50, 30, 35, 45]
     const random = Math.floor(Math.random() * sizes.length);
     size += sizes[random]
     yes_button.style.height = `${size}px`;
     yes_button.style.width = `${size}px`;
     let total = answers_no[language].length;
-    // change button text
+    
     if (i < total - 1) {
         no_button.innerHTML = answers_no[language][i];
         i++;
@@ -96,20 +96,20 @@ no_button.addEventListener('click', () => {
 });
 
 yes_button.addEventListener('click', () => {
-    // change banner gif path
+  
     let banner = document.getElementById('banner');
-    banner.src = "./images/yes.gif";
+    banner.src = "./my-valentine/yes.gif";
     refreshBanner();
-    // hide buttons div
+ 
     let buttons = document.getElementsByClassName('buttons')[0];
     buttons.style.display = "none";
-    // show message div
+ 
     let message = document.getElementsByClassName('message')[0];
     message.style.display = "block";
 });
 
 function refreshBanner() {
-    // Reload banner gif to force load  
+     
     let banner = document.getElementById('banner');
     let src = banner.src;
     banner.src = '';
@@ -131,17 +131,17 @@ function changeLanguage() {
         questionHeading.textContent = "Will you be my valentine plz Cass?";
     }
 
-    // Reset yes button text
+    
     yes_button.innerHTML = answers_yes[language];
 
-    // Reset button text to first in the new language
+    
     if (clicks === 0) {
         no_button.innerHTML = answers_no[language][0];
     } else {
         no_button.innerHTML = answers_no[language][clicks];
     }
 
-    // Update success message
+   
     const successMessage = document.getElementById("success-message");
     if (language === "french") {
         successMessage.textContent = "Yepppie, à bientôt Cass :3";
